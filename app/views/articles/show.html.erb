@@ -12,3 +12,25 @@
       } %>
     </li>
 </ul>
+
+<h2>Comments</h2>
+<!-- Look at the /views/comments/_comment.html.erb file
+and genreate the comment like a loop-->
+<%= render @article.comments %>
+
+<h2>Add comment</h2>
+<%= form_with model: [ @article, @article.comments.build ] do |form| %>
+  <p>
+    <%= form.label :commentor %>
+    <br>
+    <%= form.text_field :commentor %>
+  </p>
+  <p>
+    <%= form.label :body %>
+    <br>
+    <%= form.text_field :body  %>
+  </p>
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>

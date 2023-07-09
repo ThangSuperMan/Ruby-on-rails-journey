@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   # get '/articles/:id', to: 'articles#show'
 
   # Provide some default useful map routes and some fancy method for erb use
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
 end
