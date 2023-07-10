@@ -1,10 +1,16 @@
-<div class="containe">
+<div class="container">
   <h2>Articles</h2>
+
+  Our blog has <%= Article.public_count %> articles and counting!
+  Our blog has <%= Article.archived_count %> articles and archived!
+
   <ul>
     <% @articles.each do |article| %>
-      <li>
-        <%= link_to article.title, article %>
-      </li>
+      <% unless article.archived? %>
+        <li>
+          <%= link_to article.title, article %>
+        </li>
+      <% end %>
     <% end %>
   </ul>
 

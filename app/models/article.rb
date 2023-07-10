@@ -1,6 +1,6 @@
 class Article < ApplicationRecord
-  # Create method @article.comments for 
-  # render the comments in article page
+  include Visible
+
   has_many  :comments
 
   validates :title, presence: true
